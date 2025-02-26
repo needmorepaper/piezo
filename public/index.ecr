@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crystalline</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" type="application/ecmascript"></script>
+</head>
+
+<body>
+    <header>
+        <h1><%= board_name %></h1>
+        <h2><%= board_description %></h2>
+    </header>
+    <main>
+        <div class="threads">
+            <h2>Threads</h2>
+            <div class="threads-list">
+                <ul>
+                    <li>Replace with templates later...</li>
+                </ul>
+            </div>
+        </div>
+        <div class="create-post">
+            <h2>Create thread</h2>
+            <div class="post-form">
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Anonymous">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message..."></textarea>
+                    <input type="submit" value="Post">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <small>crystalline <%= VERSION %><br>
+        all copyrighted content is owned by the respective publisher, all threads and replies are the responsibility of the poster</small>
+    </footer>
+</body>
+
+</html>
