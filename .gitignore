@@ -3,3 +3,7 @@
 /bin/
 /.shards/
 *.dwarf
+config.yml
+*.db
+.vscode/
+.DS_STORE
