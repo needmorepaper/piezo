@@ -36,4 +36,18 @@ class Database
       puts "Built bans table"
     end
   end
+
+  # Sends a query to the database
+  def queryDb(query : String)
+    DB.open @path do |db|
+      db.query(query)
+    end
+  end
+
+  # Execute a query on the database
+  def execOnDb(query : String)
+    DB.open @parh do |db|
+      db.exec(query)
+    end
+  end
 end

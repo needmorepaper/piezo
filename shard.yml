@@ -1,4 +1,4 @@
-name: "crystalline"
+name: "piezo"
 description: "BBS/textboard written in crystal"
 version: 0.1.0
 
@@ -6,8 +6,8 @@ authors:
   - penny <penny@tfwno.gf>
 
 targets:
-  crystalline:
-    main: src/main.cr
+  piezo:
+    main: src/piezo.cr
 
 crystal: '>= 1.15.1'
 
@@ -16,5 +16,7 @@ license: AGPL-3.0-or-later
 dependencies:
   kemal:
     github: kemalcr/kemal
+  spec-kemal:
+    github: kemalcr/spec-kemal
   sqlite3:
     github: crystal-lang/crystal-sqlite3

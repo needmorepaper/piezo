@@ -7,7 +7,7 @@ sysop_name: ""
 sysop_pass: ""
 
 # Board settings
-name: "crystalline"
+name: "piezo"
 description: "chat about stuff"
 max_threads: 50
 max_replies: 500

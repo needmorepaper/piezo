@@ -1,11 +1,11 @@
-# crystalline
+# piezoboard
 BBS/textboard written in Crystal
 
 ## Installation
 
-1. Clone the Git repo (`git clone https://github.com/needmorepaper/crystalline && cd crystalline`)
+1. Clone the Git repo (`git clone https://github.com/needmorepaper/piezo && cd piezo`)
 2. Modify the `config.yml` file to adjust your board's settings
-3. Get the dependencies and run the program with `shards run crystalline`
+3. Get the dependencies and run the program with `shards run piezo`
 
 ## Usage
 
@@ -17,7 +17,7 @@ Just keep the code clean
 
 ## Contributing
 
-1. Fork it (<https://github.com/needmorepaper/crystalline/fork>)
+1. Fork it (<https://github.com/needmorepaper/piezo/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
