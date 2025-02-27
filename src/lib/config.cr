@@ -7,6 +7,11 @@ class Config
         @config = YAML.parse(File.read("config.yml"))
     end
 
+    # Reloads the YAML config.
+    def reload()
+        initialize()
+    end
+
     # Gets the database path from the config.
     def getDbPath()
         @config["db_path"].as_s
@@ -18,13 +23,12 @@ class Config
     end
 
     # Gets the sysop name from the config.
-    def getSysopName()
+    protected def getSysopName()
         @config["sysop_name"].as_s
     end
 
     # Gets the sysop password from the config. 
-    # FIXME: This should not be easily accessible.
-    def getSysopPass()
+    protected def getSysopPass()
         @config["sysop_pass"].as_s
     end
 

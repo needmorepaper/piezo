@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= board_name %></title>
-    <link rel="icon" href="favicon.svg">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js" type="application/ecmascript"></script>
+    <%= render "src/views/templates/head.ecr" %>
 </head>
-
 <body>
     <header>
         <h1><%= board_name %></h1>
@@ -25,20 +18,13 @@
             </div>
         </div>
         <div class="create-post">
+            <% if response == "Success" %>
+                <%= render "src/views/templates/success.ecr" %>
+            <% elsif response == "Failure" %>
+                <%= render "src/views/templates/error.ecr" %>
+            <% end %>
             <h2>Create thread</h2>
-            <div class="post-form">
-                <form>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Anonymous">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email">
-                    <label for="subject">Subject</label>
-                    <input type="text" name="subject" id="subject">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message..."></textarea>
-                    <input type="submit" value="Post">
-                </form>
-            </div>
+            <%= render "src/views/templates/post_form.ecr" %>
         </div>
     </main>
     <footer>

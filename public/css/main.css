@@ -71,6 +71,9 @@ div {
   input,
   textarea {
     grid-column: 1;
+    border-radius: 3px;
+    border: 1px solid white;
+    padding: 0.25em;
   }
 
   input[type="submit"] {
@@ -78,6 +81,25 @@ div {
     width: auto;
     margin: 1em 0;
     padding: 0.5em 0;
+  }
+  
+  textarea {
+    font-family: var(--primary-font);
+    resize: none;
+  }
+
+  .response {
+    border: 1px outset white;
+    border-radius: var(--border-radius);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+  }
+
+  .response-success {
+    background-color: #00aa00;
+  }
+
+  .response-error {
+    background-color: #aa0000;
   }
 }
 
@@ -113,6 +135,9 @@ div {
     textarea {
       grid-column-start: 2;
       grid-column-end: 4;
+      margin: 0.2em 0;
+      border-radius: 4px;
+      border: 1px solid white;
     }
 
     input[type="submit"] {

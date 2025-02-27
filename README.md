@@ -1,4 +1,4 @@
-# piezoboard
+# piezo
 BBS/textboard written in Crystal
 
 ## Installation
