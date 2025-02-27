@@ -45,6 +45,22 @@ div {
   }
 }
 
+.response {
+  border: 1px solid white;
+  border-radius: 3px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+  margin: 1em auto;
+  width: 50%;
+}
+
+.response-success {
+  background-color: #00aa00;
+}
+
+.response-error {
+  background-color: #aa0000;
+}
+
 .create-post {
   border: 2px solid var(--primary-foreground);
   border-radius: var(--border-radius);
@@ -86,20 +102,6 @@ div {
   textarea {
     font-family: var(--primary-font);
     resize: none;
-  }
-
-  .response {
-    border: 1px outset white;
-    border-radius: var(--border-radius);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
-  }
-
-  .response-success {
-    background-color: #00aa00;
-  }
-
-  .response-error {
-    background-color: #aa0000;
   }
 }
 
