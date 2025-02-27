@@ -9,6 +9,8 @@ response = ""
 response_detail = ""
 
 get "/" do
+  threads_list = PageGenerator::ThreadListGenerator.getAllThreads
+
   render "src/views/index.ecr"
 end
 
@@ -34,7 +36,7 @@ post "/thread/create" do |env|
   response = ""
   response_detail = ""
 
-  # Validate
+  # Validation logic
   if name.empty?
     name = "Anonymous"
   end

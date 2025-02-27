@@ -45,6 +45,13 @@ class Database
     end
   end
 
+  # Sends a query that inspects all elements in a table
+  def queryAllDb(query : String, args : NamedTuple)
+    DB.open @path do |db|
+      db.query_all query, as: args
+    end
+  end
+
   # Execute a query on the database
   def execOnDb(query : String, args : Array)
     DB.open @path do |db|

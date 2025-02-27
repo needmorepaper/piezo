@@ -54,11 +54,11 @@ div {
 }
 
 .response-success {
-  background-color: #00aa00;
+  background-color: #060;
 }
 
 .response-error {
-  background-color: #aa0000;
+  background-color: #900;
 }
 
 .create-post {
@@ -107,7 +107,7 @@ div {
 
 @media (min-width: 768px) {
   body {
-    width: 50%;
+    width: 60%;
   }
 
   header h1 {

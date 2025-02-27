@@ -3,14 +3,14 @@ class Post
     # Initializes a new `Post` instance with only .
     def initialize(id : Integer)
         @id = id
-        @parent = 0
+        @parent = Integer?
         @time = Time.utc
-        @ip = ""
-        @name = ""
-        @email = ""
-        @subject = ""
-        @content = ""
-        @replies = [0]
-        @frozen = false
+        @ip = String
+        @name = String?
+        @email = String?
+        @subject = String?
+        @content = String
+        @replies = Integer
+        @frozen = Boolean
     end
 end

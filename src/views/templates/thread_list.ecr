@@ -1,0 +1,13 @@
+<div class="threads-list">
+    <% if threads_list.empty? %>
+        <p>No threads available</p>
+    <% else %>
+        <ul>
+        <% threads_list.each do |post| %>
+            <li>
+                <strong><%= post[:subject] || "No subject" %></strong> - <%= post[:content] %>
+            </li>
+        <% end %>
+        </ul>   
+    <% end %>
+</div>

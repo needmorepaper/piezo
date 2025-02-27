@@ -13,12 +13,14 @@ class Ban
     end
 
     # Ban an user from accessing the board.
+    # WARNING: Incomplete method.
     def createBan()
         db = new Database()
         db.execOnDb("")
     end
     
-    # Unban a previously banned user 
+    # Unban a previously banned user.
+    # WARNING: Incomplete method.
     def removeBan()
         db = Piezo::DATABASE
         # TODO: Check if user is banned

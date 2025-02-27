@@ -11,11 +11,7 @@
     <main>
         <div class="threads">
             <h2>Threads</h2>
-            <div class="threads-list">
-                <ul>
-                    <li>Replace with templates later...</li>
-                </ul>
-            </div>
+            <%= render "src/views/templates/thread_list.ecr" %>
         </div>
         <div class="create-post">
             <% if response == "Success" %>
