@@ -28,10 +28,10 @@ end
 
 post "/thread/create" do |env|
   ip = env.request.remote_address.to_s
-  name = env.params.body["name"].to_s.strip
-  email = env.params.body["email"].to_s.strip
-  subject = env.params.body["subject"].to_s.strip
-  message = env.params.body["message"].to_s.strip
+  name = HTML.escape(env.params.body["name"].to_s.strip)
+  email = HTML.escape(env.params.body["email"].to_s.strip)
+  subject = HTML.escape(env.params.body["subject"].to_s.strip)
+  message = HTML.escape(env.params.body["message"].to_s.strip)
 
   response = ""
   response_detail = ""

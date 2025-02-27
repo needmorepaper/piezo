@@ -7,3 +7,4 @@ config.yml
 *.db
 .vscode/
 .DS_STORE
+.editorconfig

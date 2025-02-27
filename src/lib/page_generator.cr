@@ -12,19 +12,18 @@ module PageGenerator
     def self.getAllThreads
       posts = Piezo::DATABASE.queryAllDb("select subject, content, time from posts where parent is null order by time desc", {subject: String?, content: String?, time: String?})
       
-      puts "Fetched posts:"
       posts.each { |post| }
 
       formatted_posts = posts.compact_map do |post|
         next if post[:content].nil?
 
         time = post[:time] || "Unknown Date"
-        content = post[:content].not_nil!
+        content = HTML.escape(post[:content].not_nil!)
 
         if content.size > 100
-          abridged_content = content[0,100] + "..."
+          abridged_content = HTML.escape(content[0,100]) + "..."
         else
-          abridged_content = content
+          abridged_content = HTML.escape(content)
         end
 
         { subject: post[:subject], content: abridged_content, time: time }
