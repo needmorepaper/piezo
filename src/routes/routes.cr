@@ -9,6 +9,7 @@ response = ""
 response_detail = ""
 
 get "/" do
+  # TODO: Paginate to threads_per_page
   threads_list = PageGenerator::ThreadListGenerator.getAllThreads
 
   render "src/views/index.ecr"
@@ -56,6 +57,7 @@ post "/thread/create" do |env|
   end
 
   # Push to database
+  # TODO: Add maximum thread limit based on max_threads
   Piezo::DATABASE.execOnDb "insert into posts (
     ip,name,email,subject,content) values (
     ?,?,?,?,?)", [ip, name, email, subject, message] of DB::Any

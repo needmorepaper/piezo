@@ -8,9 +8,9 @@ class Database
     DB.open @path do |db|
       table_status = db.query_one?("select name from sqlite_master where type='table' and name=?", "posts", &.read(String))
       if table_status
-        puts "Database already exists"
+        Log.debug { "Database already exists" }
       else
-        puts "Database tables missing, rebuilding"  
+        Log.warn { "Database tables missing, rebuilding" }  
         createSchema(@path)
       end
     end
@@ -30,29 +30,29 @@ class Database
         content text,
         replies integer default 0,
         frozen integer default 0)"
-      puts "Built posts table"
+      Log.info { "Built posts table" }
       db.exec "create table if not exists bans (
         ip text not null,
         why text)"
-      puts "Built bans table"
+      Log.info { "Built bans table" }
     end
   end
 
-  # Sends a query to the database
+  # Sends a query to the database.
   def queryDb(query : String)
     DB.open @path do |db|
       db.query(query)
     end
   end
 
-  # Sends a query that inspects all elements in a table
+  # Sends a query to the database that returns all matching rows.
   def queryAllDb(query : String, args : NamedTuple)
     DB.open @path do |db|
       db.query_all query, as: args
     end
   end
 
-  # Execute a query on the database
+  # Execute a query on the database.
   def execOnDb(query : String, args : Array)
     DB.open @path do |db|
       db.exec query, args: args

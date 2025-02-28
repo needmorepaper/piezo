@@ -1,6 +1,7 @@
 # The `Post` class is a representation of a post or comment.
 class Post 
-    # Initializes a new `Post` instance with only .
+    # Initializes a new `Post` instance with only the post ID.
+    # TODO: Replace this stub template with a proper constructor (parse from DB?)
     def initialize(id : Integer)
         @id = id
         @parent = Integer?

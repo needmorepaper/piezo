@@ -1,6 +1,7 @@
 # This module provides various classes for building the content of page templates.
 module PageGenerator
-  # Initializes the PageGenerator module, generating an instance to the `Database` class.
+  # Initializes the PageGenerator module, including an instance of the `Database` constant.
+  # FIXME: Currently unable to create and use a module-wide variable, currently substituting with a direct constant call.
   def initialize
     @db = Piezo::DATABASE
   end
@@ -8,7 +9,6 @@ module PageGenerator
   # This class generates a thread list from the database.
   class ThreadListGenerator
     # Get all threads from the posts table
-    # FIXME: Unable to use module variable, substituting with a direct constant call
     def self.getAllThreads
       posts = Piezo::DATABASE.queryAllDb("select subject, content, time from posts where parent is null order by time desc", {subject: String?, content: String?, time: String?})
       

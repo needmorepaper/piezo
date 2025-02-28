@@ -4,7 +4,12 @@ require "yaml"
 class Config
     # Creates a new `Config` instance.
     def initialize()
-        @config = YAML.parse(File.read("config.yml"))
+        if File.exists?("config.yml")
+            @config = YAML.parse(File.read("config.yml"))
+        else
+            Log.fatal { "Missing configuration file, please clone 'config.default.yml' to config.yml" }
+            exit
+        end
     end
 
     # Reloads the YAML config.

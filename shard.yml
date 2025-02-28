@@ -1,5 +1,7 @@
 name: "piezo"
 description: "BBS/textboard written in crystal"
+documentation: "https://crystaldoc.info/github/needmorepaper/piezo"
+repository: "https://github.com/needmorepaper/piezo"
 version: 0.1.0
 
 authors:
@@ -16,7 +18,9 @@ license: AGPL-3.0-or-later
 dependencies:
   kemal:
     github: kemalcr/kemal
-  spec-kemal:
-    github: kemalcr/spec-kemal
   sqlite3:
     github: crystal-lang/crystal-sqlite3
+
+development_dependencies:
+  spec-kemal:
+    github: kemalcr/spec-kemal
