@@ -8,7 +8,7 @@ class Database
     DB.open @path do |db|
       table_status = db.query_one?("select name from sqlite_master where type='table' and name=?", "posts", &.read(String))
       if table_status
-        Log.debug { "Database already exists" }
+        Log.debug { "Valid database already exists" }
       else
         Log.warn { "Database tables missing, rebuilding" }  
         createSchema(@path)

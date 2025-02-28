@@ -12,7 +12,7 @@ get "/" do
   # TODO: Paginate to threads_per_page
   threads_list = PageGenerator::ThreadListGenerator.getAllThreads
 
-  render "src/views/index.ecr"
+  render "src/views/index.ecr", "src/views/base.ecr"
 end
 
 get "/index.html" do |env|
@@ -21,6 +21,14 @@ end
 
 get "/admin" do |env|
   env.redirect "/"
+end
+
+get "/thread" do |env|
+  env.redirect "/"
+end
+
+get "/thread/:id" do |env|
+  render "src/views/thread.ecr", "src/views/base.ecr"
 end
 
 get "/thread/create" do |env|

@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%= render "src/views/templates/head.ecr" %>
-</head>
-<body>
-    <header>
-        <h1><%= board_name %></h1>
-        <h2><%= board_description %></h2>
-    </header>
-    <main>
-        <div class="threads">
-            <h2>Threads</h2>
-            <%= render "src/views/templates/thread_list.ecr" %>
-        </div>
-        <div class="create-post">
-            <% if response == "Success" %>
-                <%= render "src/views/templates/success.ecr" %>
-            <% elsif response == "Failure" %>
-                <%= render "src/views/templates/error.ecr" %>
-            <% end %>
-            <h2>Create thread</h2>
-            <%= render "src/views/templates/post_form.ecr" %>
-        </div>
-    </main>
-    <footer>
-        <small>piezo <%= version %><br>
-        all copyrighted content is owned by the respective publisher, all threads and replies are the responsibility of the poster</small>
-    </footer>
-</body>
-
-</html>
+<header>
+    <h1><%= board_name %></h1>
+    <h2><%= board_description %></h2>
+</header>
+<main>
+     <div class="threads">
+        <h2>Threads</h2>
+        <%= render "src/views/elements/thread_list.ecr" %>
+    </div>
+    <div class="create-post">
+        <% if response == "Success" %>
+            <%= render "src/views/elements/success.ecr" %>
+        <% elsif response == "Failure" %>
+                <%= render "src/views/elements/error.ecr" %>
+        <% end %>
+        <h2>Create thread</h2>
+        <%= render "src/views/elements/thread_form.ecr" %>
+    </div>
+</main>

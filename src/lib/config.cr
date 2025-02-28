@@ -6,6 +6,7 @@ class Config
     def initialize()
         if File.exists?("config.yml")
             @config = YAML.parse(File.read("config.yml"))
+            Log.info { "Config file loaded" }
         else
             Log.fatal { "Missing configuration file, please clone 'config.default.yml' to config.yml" }
             exit
