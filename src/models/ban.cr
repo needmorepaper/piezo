@@ -1,5 +1,10 @@
 # The `Ban` class is a representation of a ban.
 class Ban
+    # The `IP` property represents a banned user's IP.
+    property ip : String
+    # The `why` property represents a ban reason.
+    property why : String?
+
     # Creates a new `Ban` instance with no ban reason.
     def initialize(ip : String)
         @ip = ip
@@ -12,14 +17,14 @@ class Ban
         @why = why
     end
 
-    # Ban an user from accessing the board.
+    # Write a ban to the database.
     # WARNING: Incomplete method.
     def createBan()
         db = new Database()
         db.execOnDb("")
     end
     
-    # Unban a previously banned user.
+    # Remove a ban from the database.
     # WARNING: Incomplete method.
     def removeBan()
         db = Piezo::DATABASE
