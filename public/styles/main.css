@@ -20,15 +20,33 @@ header {
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 6px;
 }
 
 header h1 {
   margin: 1rem 0 0 0;
 }
 
+.header-nav {
+  margin: 0 0 1rem 0;
+}
+
+a {
+  color: var(--primary-foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 div {
   margin: 1em 0;
+}
+
+.container {
+  border: 2px solid var(--primary-foreground);
+  border-radius: var(--border-radius);
 }
 
 .threads {
@@ -103,6 +121,13 @@ div {
     font-family: var(--primary-font);
     resize: none;
   }
+}
+
+footer hr {
+  border: none;
+  border-top: 2px dashed #333;
+  color: #333;
+  height: 5px;
 }
 
 @media (min-width: 768px) {

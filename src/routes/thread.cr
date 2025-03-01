@@ -8,26 +8,12 @@ version = Piezo::VERSION
 response = ""
 response_detail = ""
 
-get "/" do
-  # TODO: Paginate to threads_per_page
-  threads_list = PageGenerator::ThreadListGenerator.getAllThreads
-
-  render "src/views/index.ecr", "src/views/base.ecr"
-end
-
-get "/index.html" do |env|
-  env.redirect "/"
-end
-
-get "/admin" do |env|
-  env.redirect "/"
-end
-
 get "/thread" do |env|
   env.redirect "/"
 end
 
 get "/thread/:id" do |env|
+  # thread_data = PageGenerator::ThreadGenerator.getThread(:id.to_i)
   render "src/views/thread.ecr", "src/views/base.ecr"
 end
 
@@ -67,8 +53,8 @@ post "/thread/create" do |env|
   # Push to database
   # TODO: Add maximum thread limit based on max_threads
   Piezo::DATABASE.execOnDb "insert into posts (
-    ip,name,email,subject,content) values (
-    ?,?,?,?,?)", [ip, name, email, subject, message] of DB::Any
+      ip,name,email,subject,content) values (
+      ?,?,?,?,?)", [ip, name, email, subject, message] of DB::Any
   response = "Success"
   response_detail = "thread successfully created!"
   env.redirect "/"

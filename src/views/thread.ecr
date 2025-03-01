@@ -1,9 +1,25 @@
 <header>
     <h1><%= board_name %></h1>
     <h2><%= board_description %></h2>
+    <div class="header-nav">
+        <a href="/">return to thread list</a>
+    </div>
 </header>
 <main>
-    <div class="threads">
-        <p>soon...</p>
+    <div class="container thread-link">
+        <div class="post-info">
+            <span>
+                <strong>Anonymous</strong>
+                01/01/70(Sun) 09:00:00
+                No.1
+            </span>
+        </div>
+        <div class="post-content">
+            <p>This should contain the actual post's message!</p>
+        </div>
+    </div>
+    <div class="container thread-form">
+        <h2>Reply to thread</h2>
+        <%= render "src/views/elements/thread_form.ecr" %>
     </div>
 </main>

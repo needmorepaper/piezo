@@ -5,7 +5,7 @@
         <ul>
         <% threads_list.each do |post| %>
             <li>
-                <strong><%= post[:subject] || "No subject" %></strong> - <%= post[:content] %>
+                <a href=<%= "/thread/" + post[:id].to_s %>><strong><%= post[:subject] || "No subject" %></strong> - <%= post[:content] %></a>
             </li>
         <% end %>
         </ul>   
