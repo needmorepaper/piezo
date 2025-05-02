@@ -41,7 +41,7 @@ class Database
   # Sends a query to the database.
   def queryDb(query : String, *args_)
     DB.open @path do |db|
-      db.query query, *args_
+      db.query(query, *args_)
     end
   end
 
@@ -55,14 +55,14 @@ class Database
   # Sends a query to the database that returns all matching rows.
   def queryAllDb(query : String, args : NamedTuple)
     DB.open @path do |db|
-      db.query_all query, as: args 
+      db.query_all(query, as: args)
     end
   end
 
   # Execute a query on the database.
   def execOnDb(query : String, args : Array)
     DB.open @path do |db|
-      db.exec query, args
+      db.exec(query, args: args)
     end
   end
 end

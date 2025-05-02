@@ -63,9 +63,8 @@ post "/thread/create" do |env|
 
   # Push to database
   # TODO: Add maximum thread limit based on max_threads
-  Piezo::DATABASE.execOnDb "insert into posts (
-      ip,name,email,subject,content) values (
-      ?,?,?,?,?)", [ip, name, email, subject, message] of DB::Any
+  Piezo::DATABASE.execOnDb("insert into posts (ip,name,email,subject,content) values (?,?,?,?,?)",
+    [ip, name, email, subject, message] of DB::Any)
   response = "Success"
   response_detail = "thread successfully created!"
   env.redirect "/"
