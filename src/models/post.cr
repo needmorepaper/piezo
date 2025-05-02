@@ -23,7 +23,7 @@ class Post
     property frozen : Bool
 
     # Initializes a new `Post` instance.
-    def initialize(id)
+    def initialize(id : Int64)
         @id = id
         @time = Time.utc
         @ip = ""

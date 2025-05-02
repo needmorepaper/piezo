@@ -9,13 +9,13 @@
     <div class="container thread-link">
         <div class="post-info">
             <span>
-                <strong>Anonymous</strong>
-                01/01/70(Sun) 09:00:00
-                No.1
+                <strong><%= thread_data.name %></strong>
+                <%= thread_data.time.to_s("%d/%m/%y(%a) %H:%M:%S") %>
+                No.<%= thread_data.id %>
             </span>
         </div>
         <div class="post-content">
-            <p>This should contain the actual post's message!</p>
+            <p><%= thread_data.content %></p>
         </div>
     </div>
     <div class="container thread-form">

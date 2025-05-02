@@ -13,7 +13,18 @@ get "/thread" do |env|
 end
 
 get "/thread/:id" do |env|
-  # thread_data = PageGenerator::ThreadGenerator.getThread(:id.to_i)
+  begin
+    id = env.params.url["id"].to_i
+  rescue exception
+    halt env, 400    
+  end
+  
+  begin
+    thread_data = PageGenerator::ThreadGenerator.getThread(id)
+  rescue exception
+    puts(exception)
+    halt env, 400
+  end
   render "src/views/thread.ecr", "src/views/base.ecr"
 end
 

@@ -39,23 +39,30 @@ class Database
   end
 
   # Sends a query to the database.
-  def queryDb(query : String)
+  def queryDb(query : String, *args_)
     DB.open @path do |db|
-      db.query(query)
+      db.query query, *args_
+    end
+  end
+
+  # Execute a query that returns a single row.
+  def queryOneDb(query : String, *args, fields : NamedTuple)
+    DB.open @path do |db|
+      db.query_one(query, *args, as: fields)
     end
   end
 
   # Sends a query to the database that returns all matching rows.
   def queryAllDb(query : String, args : NamedTuple)
     DB.open @path do |db|
-      db.query_all query, as: args
+      db.query_all query, as: args 
     end
   end
 
   # Execute a query on the database.
   def execOnDb(query : String, args : Array)
     DB.open @path do |db|
-      db.exec query, args: args
+      db.exec query, args
     end
   end
 end
